@@ -1,0 +1,129 @@
+.container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+
+}
+.phone-image-container{
+    margin-left: -100px;
+    margin-top: -24px;
+}
+.wrapper{
+    border:0.5px solid rgb(219,219,219);
+    width: 350px;
+    height: 380px;
+    margin-left: 20px;
+    background-color: rgb(255, 255, 255);
+
+}
+.insta-heading{
+    padding: 10px;
+    text-align: center;
+}
+.input-field{
+    width: 100%;
+    text-align:center;
+    margin-top: 20px;
+    display: inline-block;
+}
+input{
+    width: 80%;
+    background-color:#fafafa;
+    padding: 9px 0 7px 8px;
+    border-radius: 3px;
+    border: 0.1px solid rgb(135, 134, 134);
+    margin-top:3px;
+    outline: none;
+}
+
+.btn{
+    font-size: 1rem;
+    margin-top: 19px;
+    padding: 5px 0;
+    border: none;
+    color: white;
+    background-color: rgb(178,223,252);
+    width: 80%;
+    border-radius: 2px;
+}
+.or-part{
+    text-align: center;
+    margin-top: 20px;
+}
+.or{
+    color: rgba(0, 0, 0, 0.601);
+}
+
+.other-option{
+    margin-top: 14px;
+    color: rgb(46, 46, 146);
+}
+.facebook{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.facebook span{
+    margin-right: 6px;
+}
+.forget-password{
+    margin-top: 20px;
+}
+.second-wrapper {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    border: 0.5px solid rgb(219,219,219);
+    text-align: center;
+    margin-top: 30px;
+    width: 350px;
+    transform: translate(-1px, 5px);
+    height: 50px;
+    margin-left: 20px;
+    background-color: rgba(255, 255, 255, 0.768);
+}
+.singup{
+    margin-top: 15px;
+    display: inline-block;
+}
+.third-wrapper{
+    margin-top: 170px;
+    /* border: 2px solid black; */
+}
+.getApp{
+    margin-top: 10px;
+    text-align: center;
+}
+.app{
+    font-size: 20px;
+}
+.store{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.storeImg{
+    margin-top: 10px;
+    width: 130px;
+    margin-left: 5px;
+}
+.forth-wrapper{
+    display: block;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: -10px;
+    text-align: center;
+    word-spacing: 10px;
+    font-size: 14px;
+    color: #8E8E9C;
+}
+.first-line{
+    margin-top: 20px;
+}
+.mx{
+    margin-top: 10px;
+}
