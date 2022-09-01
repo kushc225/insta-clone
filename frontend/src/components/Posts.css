@@ -1,0 +1,19 @@
+.posts-container{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 500px;
+    height: 600px;
+    border: 2px solid rgb(235, 235, 235);
+    background-color: white;
+}
+.posts-header-container{
+    padding: 10px;
+    height: 80px;
+    overflow: hidden;
+}
+.post-content{
+    margin-top: 20px;
+    border: 2px solid yellow;
+    height: 60%;
+}

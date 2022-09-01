@@ -21,6 +21,7 @@
 .insta-heading{
     padding: 10px;
     text-align: center;
+    margin-top: 24px;
 }
 .input-field{
     width: 100%;
@@ -109,21 +110,4 @@ input{
     margin-top: 10px;
     width: 130px;
     margin-left: 5px;
-}
-.forth-wrapper{
-    display: block;
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    bottom: -10px;
-    text-align: center;
-    word-spacing: 10px;
-    font-size: 14px;
-    color: #8E8E9C;
-}
-.first-line{
-    margin-top: 20px;
-}
-.mx{
-    margin-top: 10px;
 }

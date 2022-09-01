@@ -1,0 +1,57 @@
+.footer-container{
+    margin-top: 10px;
+}
+.insta-events{
+    display: flex;
+}
+.share{
+    margin-left: 70%;
+    cursor: pointer;
+}
+.likes{
+    margin-left: 10px;
+    font-weight: 500;
+}
+.likes >  span{
+    font-weight: bold;
+}
+.auther-caption > span{
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+.user-comments > span{
+    color: gray;
+    display: inline-block;
+    margin-top: 5px;
+
+}
+.time-ago > span{
+    color: gray;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.my-comment{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.my-comment > input{
+    border: none;
+
+}
+.post-btn >  button{
+    color:rgb(179,223,252);
+    padding:7px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.mx-2{
+    margin-left: 10px;
+}
+.c-pointer{
+    cursor: pointer;
+}

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import "./login.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import appstore from "../img/appstore.png";
+import playstore from "../img/playstore.png";
+import instalogo from "../img/instalogo.png";
+import Footer from "../components/Footer";
 const Login = () => {
   const dispatch = useDispatch();
   const { login } = useSelector((state) => state.loginReducer);
@@ -24,7 +28,7 @@ const Login = () => {
         </div>
         <div className="wrapper">
           <div className="insta-heading">
-            <h1>Instagram</h1>
+            <img src={instalogo} alt="" />
           </div>
           <div className="input-field">
             <div className="username">
@@ -73,39 +77,13 @@ const Login = () => {
               <p className="app">Get the app. </p>
             </div>
             <div className="store">
-              <img className="storeImg" src="img/appstore.png" alt="" />
-              <img className="storeImg" src="img/playstore.png" alt="" />
+              <img className="storeImg" src={appstore} alt="app sotre" />
+              <img className="storeImg" src={playstore} alt="google play" />
             </div>
           </div>
         </div>
       </div>
-      <div className="forth-wrapper">
-        <div className="first-line mx ">
-          <span>Meta</span>
-          <span>About</span>
-          <span>Blog</span>
-          <span>Help</span>
-          <span>API</span>
-          <span>Privacy</span>
-          <span>Terms</span>
-          <span>Top Accounts</span>
-          <span>Hashtag</span>
-          <span>Locations</span>
-          <span>Instagram</span>
-          <span>Locations</span>
-          <span>Instagram Lite</span>
-          <span>Contact Uploading & Non-Users</span>
-        </div>
-        <div className="second-line mx">
-          <span>Dance</span>
-          <span>Foot & Drink</span>
-          <span>Home & Garden</span>
-          <span>Visual Arts</span>
-        </div>
-        <div className="third-line mx">
-          <span>English @ 2022 Instagram from Meta</span>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 };
