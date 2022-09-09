@@ -58,6 +58,9 @@ input{
 }
 
 .other-option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 14px;
     color: rgb(46, 46, 146);
 }

@@ -3,18 +3,40 @@
     display: inline-block;
     width: 500px;
     height:110px;
-    overflow: scroll;
     position: absolute;
     top: 12%;
     left: 20%;
     border-radius: 14px;
     background-color: white;
+/* hiding the scrollbar but making it work  */
+    overflow-x: scroll;
+    overflow-y:hidden;
 }
 .status-element{
     margin: 6px -7px 2px 12px;
     display: flex;
 }
+/* hiding the scrollbar but making it work  */
 .status-container::-webkit-scrollbar{
     display: none;
 
+}
+
+@media screen and (max-width: 732px) {
+    .status-container{
+        left: 11%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .status-container{
+        left: 7%;
+    }
+}
+@media screen and (max-width: 416px) {
+    .status-container{
+        
+        width: 100vh;
+        left:0;
+        
+    }
 }

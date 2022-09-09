@@ -6,6 +6,7 @@ import appstore from "../img/appstore.png";
 import playstore from "../img/playstore.png";
 import instalogo from "../img/instalogo.png";
 import Footer from "../components/Footer";
+import FacebookIcon from "@mui/icons-material/Facebook";
 const Login = () => {
   const dispatch = useDispatch();
   const { login } = useSelector((state) => state.loginReducer);
@@ -59,7 +60,10 @@ const Login = () => {
             <p className="or">OR</p>
             <div className="facebook">
               <div className="other-option">
-                <span>f </span> Log in with Facebook
+                <span>
+                  <FacebookIcon />
+                </span>
+                Log in with Facebook
               </div>
             </div>
             <div className="forget-password">Forget password? </div>

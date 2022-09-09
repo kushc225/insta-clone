@@ -1,9 +1,10 @@
 .posts-container{
-    position: absolute;
+    margin-top: 70px;
+    position: relative;
     top: 30%;
     left: 20%;
     width: 500px;
-    height: 600px;
+    height: 760px;
     border: 2px solid rgb(235, 235, 235);
     background-color: white;
 }
@@ -16,4 +17,22 @@
     margin-top: 20px;
     border: 2px solid yellow;
     height: 60%;
+}
+
+@media screen and (max-width: 732px) {
+    .posts-container{
+        left: 11%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .posts-container{
+        left: 7%;
+    }
+}
+@media screen and (max-width: 416px) {
+    .posts-container{
+        width: 100vh;
+        left:0;
+        
+    }
 }

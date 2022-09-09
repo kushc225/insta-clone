@@ -38,5 +38,11 @@ box-shadow: 1px 3px 9px -3px rgb(0 0 0 / 75%);
 }
 .nav-icons{
     padding: 8px;
+}
 
+@media query and (max-width:600px){
+    #second-logo{
+        width: 80px;
+        border: 2px solid gold;
+    }
 }
