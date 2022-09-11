@@ -114,3 +114,15 @@ input{
     width: 130px;
     margin-left: 5px;
 }
+
+
+
+@media only screen and (max-width: 900px) {
+    .phone-image-container{
+      display: none;
+    }
+    .second-wrapper {
+        left: 0%;
+        top:95%;
+    }
+  }

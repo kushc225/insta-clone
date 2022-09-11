@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const PostSchema = mongoose.Schema({
+const storySchema = mongoose.Schema({
   owner: {
     type: String,
     required: true,
@@ -11,26 +11,19 @@ const PostSchema = mongoose.Schema({
   },
   caption: {
     type: String,
+    default: null,
   },
   tagPeople: {
     type: [String],
-  },
-  hastag: {
-    type: [String],
+    default: null,
   },
   likes: {
     type: [String],
-    default: 0,
   },
-  comments: {
+  viewer: {
     type: [String],
-    default: 0,
-  },
-  views: {
-    type: [String],
-    default: 0,
   },
 });
 
-const PostModel = mongoose.model("post", PostSchema);
-export default PostModel;
+const StoryModel = mongoose.model("story", storySchema);
+export default StoryModel;

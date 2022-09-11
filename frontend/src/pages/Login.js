@@ -70,8 +70,8 @@ const Login = () => {
           </div>
 
           <div className="second-wrapper">
-            <div>
-              <p className="singup">
+            <div className="singup">
+              <p>
                 Don't have an account? <Link to="/signin">Sign up</Link>
               </p>
             </div>
