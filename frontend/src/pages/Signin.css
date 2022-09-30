@@ -1,0 +1,43 @@
+.container-signin{
+    top:39%;
+}
+.wrapper-signin{
+    height: 500px;
+}
+.second-wrapper-signin {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+}
+.statement {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0 40px 10px;
+    text-align: center;
+}
+.statement span{
+    color: thistle;
+}
+.facebook-signin{
+    background: #0095F6;
+    margin: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.other-option-signin{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    margin: 0;
+}
+input{
+     margin-top: 7px;
+}
+.or-part-sign{
+    margin:0;
+}

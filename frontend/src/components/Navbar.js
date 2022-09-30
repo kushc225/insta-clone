@@ -8,8 +8,8 @@ import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import Card from "./Card";
-import Footer from "./Footer";
+// import Card from "./Card";
+// import Footer from "./Footer";
 
 const Navbar = () => {
   return (

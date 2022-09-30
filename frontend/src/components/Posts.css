@@ -21,12 +21,12 @@
 
 @media screen and (max-width: 732px) {
     .posts-container{
-        left: 11%;
+        left: 15%;
     }
 }
 @media screen and (max-width: 600px) {
     .posts-container{
-        left: 7%;
+        left: 5%;
     }
 }
 @media screen and (max-width: 416px) {

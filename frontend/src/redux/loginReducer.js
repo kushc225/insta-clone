@@ -1,14 +1,18 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-  login: false,
+  isLogin: false,
+  name: "",
 };
 
 export const loginReducer = createReducer(initialState, {
   loginStart: (state) => {
-    state.login = true;
+    state.isLogin = true;
   },
   loginEnd: (state) => {
-    state.login = false;
+    state.isLogin = false;
+  },
+  setUserName: (state, action) => {
+    state.name = action.payload;
   },
 });

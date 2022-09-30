@@ -1,5 +1,5 @@
-import PostModel from "../modals/post.js";
-import StroyModel from "../modals/story.js";
+import PostModel from "../models/post.js";
+import StroyModel from "../models/story.js";
 
 export const addPhoto = async (req, res, next) => {
   try {

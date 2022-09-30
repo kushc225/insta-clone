@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import "./Home.css";
 import Navbar from "../components/Navbar";
 import Status from "../components/Status";
@@ -27,6 +27,7 @@ const Home = () => {
       url: "../insta/three.mp4",
     },
   ];
+
   return (
     <>
       <Navbar />

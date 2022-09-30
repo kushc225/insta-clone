@@ -4,13 +4,14 @@ import "./SubStatus.css";
 const SubStatus = ({ imgURL, username, type }) => {
   const [trippledot, setTrippledot] = useState(false);
   const trippledotHanderl = () => {
-    console.log("object");
     if (trippledot === false) {
       setTrippledot(true);
       return;
     }
     setTrippledot(false);
   };
+  imgURL =
+    "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80";
 
   return (
     <>
