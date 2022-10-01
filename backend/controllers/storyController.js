@@ -2,32 +2,22 @@ import axios from "axios";
 import { format } from "timeago.js";
 import StoryModel from "../models/story.js";
 import UserModel from "../models/user.js";
-import { ObjectId } from "bson";
 const data = [];
 export const myFollowingStories = async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.user.id);
-    let virtual = await user.following.filter(async (person) => {
-      const story = await StoryModel.find(
-        { owner: person },
-        { createdAt: 0, updatedAt: 0 }
-      );
-      return story;
-    });
-    console.log(virtual);
-    data.push(virtual);
-    res.json(data);
+    const data1 = await f1(user.following);
+
+    res.json({ data });
   } catch (error) {
     next(error);
   }
 };
 const f1 = async (person) => {
-  const story = await StoryModel.find(
-    { owner: person },
-    { createdAt: 0, updatedAt: 0 }
-  );
-  console.log(story);
-  return story;
+  for (let i = 0; i < person.length; i++) {
+    const val = await StoryModel.find({ owner: person[i] });
+    data.push(val);
+  }
 };
 // http://localhost:5000/api/user/findstorybyid/:id (id === the user collection id )
 export const findStoryByOwnerId = async (req, res, next) => {
