@@ -13,8 +13,8 @@ const Status = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          setStatus(data.dest);
-          console.log(data);
+          setStatus(data.data[0]);
+          console.log(data.data[0]);
         })
         .catch((err) => console.log(err));
     };
@@ -25,7 +25,7 @@ const Status = () => {
       <div className="status-container">
         <div className="status-element">
           {status.map((item, o) => (
-            <SubStatus key={o} username={item.owner} imgURL={item.url} />
+            <SubStatus key={o} username={item.ownerName} imgURL={item.url} />
           ))}
         </div>
       </div>

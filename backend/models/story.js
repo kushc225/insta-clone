@@ -6,6 +6,10 @@ const storySchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    ownerName: {
+      type: String,
+      required: true,
+    },
     imgURL: {
       type: String,
       required: true,
@@ -23,6 +27,12 @@ const storySchema = mongoose.Schema(
     },
     viewer: {
       type: [String],
+    },
+    DMY: {
+      type: String,
+    },
+    HMS: {
+      type: String,
     },
   },
   { timestamps: true }
