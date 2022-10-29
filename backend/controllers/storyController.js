@@ -2,55 +2,45 @@ import axios from "axios";
 import { format } from "timeago.js";
 import StoryModel from "../models/story.js";
 import UserModel from "../models/user.js";
-const data = [];
-export const myFollowingStories = async (req, res, next) => {
-  try {
-    const user = await UserModel.findById(req.user.id);
-    if (user.following.length === 0) {
-      return res.status(200).json({ success: true, msg: "empty" });
-    }
-    await f1(user.following);
 
+export const myFollowingStories = async (req, res, next) => {
+  let x = 0;
+  try {
+    const userProfile = await UserModel.findById(req.user.id);
+    const data = [];
+
+    for (let i = 0; i < userProfile.following.length; i++) {
+      const val = await StoryModel.find({ owner: userProfile.following[i] });
+      let dataPushingArray = [];
+      for (let j = 0; j < val.length; j++) {
+        const createAtString = format(val[i].createdAt);
+
+        let storyUploadedTime = "";
+        for (let i = 0; i < createAtString.length; i++) {
+          if (i != 0 && i != 1) {
+            storyUploadedTime += createAtString[i];
+          }
+        }
+        // console.log(storyUploadedTime);
+        // if (createAtString) dataPushingArray.push(val[i]);
+        if (
+          storyUploadedTime != "weeks ago" &&
+          storyUploadedTime != " weeks ago" &&
+          storyUploadedTime != "days ago" &&
+          storyUploadedTime != " days ago"
+        ) {
+          dataPushingArray.push(val[i]);
+        }
+      }
+
+      data.push(dataPushingArray);
+    }
     res.status(200).json({ success: true, data });
   } catch (error) {
     next(error);
   }
 };
-const f1 = async (person) => {
-  for (let i = 0; i < person.length; i++) {
-    const val = await StoryModel.find({ owner: person[i] });
-    if (val.length != 0) {
-      // console.log("val =>", val[0].owner);
-      data.push(val);
-    }
-    // for (let j = 0; j < val.length; j++) {
-    //   if (val[i].length != 0) {
-    //     const d = new Date();
-    //     const year = d.getFullYear();
-    //     const month = d.getMonth() + 1;
-    //     const date = d.getDate();
-    //     let hour = d.getHours();
-    //     let min = d.getMinutes();
-    //     let sec = d.getSeconds();
-    //     let DMY = date + "/" + month + "/" + year;
-    //     let HMS = hour + "/" + min + "/" + sec;
-    //     DMY = new Date(DMY);
-    //     HMS = new Date(HMS);
-    //     let date2 = new Date(val[i].DMY);
-    //     let date3 = new Date(val[i].HMS);
-    //     let Difference_In_Days = date2.getTime() - DMY.getTime();
-    //     // let Difference_In_Hours = date3.getTime() - HMS.getTime();
-    //     // console.log(val[i].DMY.getTime());
-    //     // console.log(Difference_In_Days, Difference_In_Hours);
-    //     let Difference_In_Day = Difference_In_Days / (1000 * 3600 * 24);
-    //     console.log(Difference_In_Day);
-    //     if (Difference_In_Day == 0) {
-    //       data.push(val[j]);
-    //   }
-    // }
-    // }
-  }
-};
+
 // http://localhost:5000/api/user/findstorybyid/:id (id === the user collection id )
 export const findStoryByOwnerId = async (req, res, next) => {
   try {

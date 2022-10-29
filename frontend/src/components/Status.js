@@ -1,6 +1,9 @@
 import { React, useEffect, useState } from "react";
 import SubStatus from "./subcomponent/SubStatus";
+import Del from "./subcomponent/Del";
+import Del1 from "./subcomponent/Del1";
 import "./Status.css";
+let dj;
 const Status = () => {
   const [status, setStatus] = useState([]);
   const token = localStorage.getItem("token");
@@ -13,20 +16,42 @@ const Status = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          setStatus(data.data[0]);
-          console.log(data.data[0]);
+          // data.data.map((item) => {
+          //   item.map((key) => {
+          //     console.log(key.caption);
+          //   });
+          // });
+          // console.log(data.data);
+          dj = data;
+          setStatus(dj.data);
+          // console.log("status", status);
+          // status.map((item) => {
+          //   item.map((key) => {
+          //     console.log("first");
+          //   });
+          // });
         })
         .catch((err) => console.log(err));
     };
     api();
   }, []);
+
   return (
     <>
       <div className="status-container">
         <div className="status-element">
-          {status.map((item, o) => (
-            <SubStatus key={o} username={item.ownerName} imgURL={item.url} />
-          ))}
+          {status.map((person) => {
+            return person.map((item, o) => {
+              return (
+                <SubStatus
+                  key={o}
+                  username={item.ownerName}
+                  imgURL={item.imgURL}
+                  type="ministatus"
+                />
+              );
+            });
+          })}
         </div>
       </div>
     </>

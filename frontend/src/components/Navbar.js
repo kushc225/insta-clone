@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import Del from "./subcomponent/Del";
 import instalogo from "../img/instalogo.png";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";

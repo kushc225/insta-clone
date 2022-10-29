@@ -1,39 +1,24 @@
 import { format } from "timeago.js";
-new Date().getFullYear();
-new Date().getMonth() + 1;
-new Date().getDate();
-// console.log(dayjs().second());
-// console.log("2022-10-01T05:48:42.960+00:00" - "2022-09-13T17:18:42.213Z");
-// console.log(format("2022-10-01T05:48:42.960+00:00"));
-// let uploadTime = date.getHours()
+const a1 = "1 weeks ago";
 
-var date1 = new Date("01/10/2022");
-var date2 = new Date("01/10/2022");
-let hour = new Date().getHours();
-let min = new Date().getMinutes();
-let sec = new Date().getSeconds();
-// To calculate the time difference of two dates
-hour = 2;
-var Difference_In_Time = date2.getTime() - date1.getTime();
-const dateOrg = {
-  1: "01",
-  2: "02",
-  3: "03",
-  4: "04",
-  5: "05",
-  6: "06",
-  7: "07",
-  8: "08",
-  8: "08",
-  9: "09",
-};
-for (let item in dateOrg) {
-  console.log(item, dateOrg[item]);
-  if (item == hour) {
-    hour = dateOrg[item];
+const a2 = "12 days ago";
+const a3 = "12 minutes ago";
+const a4 = "12 seconds ago";
+const a5 = "12 hours ago";
+let storyUploadedTime = "";
+for (let i = 0; i < a3.length; i++) {
+  if (i != 0 && i != 1) {
+    storyUploadedTime += a3[i];
   }
 }
-console.log(hour);
-// To calculate the no. of days between two dates
-var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-// console.log(Difference_In_Days);
+console.log(storyUploadedTime);
+if (
+  storyUploadedTime != "weeks ago" &&
+  storyUploadedTime != " weeks ago" &&
+  storyUploadedTime != "days ago" &&
+  storyUploadedTime != " days ago"
+) {
+  console.log("object");
+}
+// console.log(storyUploadedTime);
+console.log(format("2022-10-27T14:46:55.946Z"));

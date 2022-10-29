@@ -7,7 +7,7 @@ import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfi
 import "./Footer.css";
 const Footer = () => {
   const [comment, setComment] = useState("");
-  console.log(comment);
+  // console.log(comment);
   return (
     <>
       <div className="footer-container">

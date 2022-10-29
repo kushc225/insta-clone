@@ -1,7 +1,10 @@
 .single-status{
     width: 80px;
     cursor: pointer;
-    margin:1px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
 }
 .single-pro-status{
@@ -22,6 +25,9 @@
 .status-side-username{
     overflow: hidden;
     width: inherit;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 .sub-side-username{
     display: flex;
