@@ -28,6 +28,7 @@ box-shadow: 1px 3px 9px -3px rgb(0 0 0 / 75%);
 }
 .search-insta input{
     border: none;
+    padding: 8px;
     outline: none;
     background-color: transparent;
 
@@ -45,4 +46,7 @@ box-shadow: 1px 3px 9px -3px rgb(0 0 0 / 75%);
         width: 80px;
         border: 2px solid gold;
     }
+}
+.search-insta input::placeholder{
+    font-size: 16px;
 }

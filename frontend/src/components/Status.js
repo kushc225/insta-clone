@@ -46,6 +46,7 @@ const Status = () => {
                 <SubStatus
                   key={o}
                   username={item.ownerName}
+                  id={item._id}
                   imgURL={item.imgURL}
                   type="ministatus"
                 />

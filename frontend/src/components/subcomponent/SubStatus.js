@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SubStatus.css";
 
-const SubStatus = ({ imgURL, username, type }) => {
+const SubStatus = ({ imgURL, username, type, id }) => {
   const [trippledot, setTrippledot] = useState(false);
   const trippledotHanderl = () => {
     if (trippledot === false) {
@@ -12,6 +12,10 @@ const SubStatus = ({ imgURL, username, type }) => {
   };
   imgURL =
     "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80";
+
+  const statusClickHandler = (id) => {
+    console.log(id);
+  };
 
   return (
     <>
@@ -28,7 +32,10 @@ const SubStatus = ({ imgURL, username, type }) => {
           </span>
         </div>
       ) : (
-        <div className="single-status">
+        <div
+          className="single-status"
+          onClick={() => statusClickHandler({ id })}
+        >
           <div className="insta-pic-holder">
             <img className="instaProfilePic" src={imgURL} alt="loading" />
           </div>

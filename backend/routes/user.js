@@ -12,7 +12,7 @@ import {
 } from "../controllers/userController.js";
 import {
   myFollowingStories,
-  findStoryByOwnerId,
+  findStoryByStoryId,
 } from "../controllers/storyController.js";
 import { verifyToken } from "../middleware/AuthToken.js";
 const route = express.Router();
@@ -48,6 +48,6 @@ route.get("/watchstory/:id", verifyToken, watchStory);
 route.get("/relatedStory", verifyToken, myFollowingStories);
 
 // http://localhost:5000/api/user/findstorybyid/:id (watch the story of others)
-route.get("/findstorybyid/:id", verifyToken, findStoryByOwnerId);
+route.get("/findstorybyid/:id", verifyToken, findStoryByStoryId);
 
 export default route;
