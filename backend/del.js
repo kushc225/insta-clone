@@ -24,4 +24,4 @@
 // console.log(format("2022-10-27T14:46:55.946Z"));
 
 import { format } from "timeago.js";
-console.log(format(format("2022-11-07T09:54:00.522+00:00")));
+console.log(format(format("2022-10-28T04:02:26.948Z")));

@@ -4,48 +4,24 @@ import StoryModel from "../models/story.js";
 import UserModel from "../models/user.js";
 
 export const myFollowingStories = async (req, res, next) => {
-  let x = 0;
   try {
+    let arr = [];
+    let count = 0;
     const userProfile = await UserModel.findById(req.user.id);
-    const data = [];
-    let cnt = 0;
     for (let i = 0; i < userProfile.following.length; i++) {
-      const val = await StoryModel.find({ owner: userProfile.following[i] });
-      let dataPushingArray = [];
-      for (let j = 0; j < val.length; j++) {
-        const createAtString = format(val[j].createdAt);
-        let storyUploadedTime = "";
-        for (let k = 0; k < createAtString.length; k++) {
-          if (k != 0 && k != 1) {
-            storyUploadedTime += createAtString[k];
-          }
+      let person = await StoryModel.find({ owner: userProfile.following[i] });
+      for (let i = 0; i < person.length; i++) {
+        let currTime = new Date().getTime() - person[i].DMY;
+        let second = currTime / 1000;
+        let minute = second / 60;
+        let hours = minute / 60;
+        if (hours < 24) {
+          count++;
+          arr.push(person[i]);
         }
-        // console.log(val);
-        // console.log(createAtString, storyUploadedTime);
-        // if (createAtString) dataPushingArray.push(val[i]);
-        // console.log(storyUploadedTime == " weeks ago");
-        if (
-          storyUploadedTime == "week ago" ||
-          storyUploadedTime == " week ago" ||
-          storyUploadedTime == "day ago" ||
-          storyUploadedTime == " day ago" ||
-          storyUploadedTime == "weeks ago" ||
-          storyUploadedTime == " weeks ago" ||
-          storyUploadedTime == "days ago" ||
-          storyUploadedTime == " days ago"
-        ) {
-          continue;
-        } else {
-          cnt++;
-          dataPushingArray.push(val[i]);
-        }
-      }
-      // console.log(dataPushingArray);
-      if (dataPushingArray.length != 0) {
-        data.push(dataPushingArray);
       }
     }
-    res.status(200).json({ success: true, noOfStories: cnt, data });
+    res.status(200).json({ success: true, count, arr });
   } catch (error) {
     next(error);
   }
